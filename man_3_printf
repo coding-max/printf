@@ -1,0 +1,104 @@
+.TH _PRINTF "March/2020" "1.0" "Maximiliano Pan & Rodolfo Delgado" "manpage _printf"
+
+.P
+
+.SH NAME
+
+.P
+
+_printf \- function that prints strings, characters, and more.
+
+
+.SH SYNOPSIS
+
+.P
+
+#include "holberton.h"
+
+.RS
+	- #include <unistd.h>
+
+	- #include <stdarg.h>
+
+	- #include <stdlib.h>
+
+	- #include <stdio.h>
+
+	- #include <limits.h>
+.RE
+.PP
+int
+.B _printf
+(const char *format, ...);
+.PP
+int _putchar(char c);
+
+int print_c(va_list arg);
+
+int print_s(va_list arg);
+
+int print_r(va_list arg);
+
+int print_id(va_list arg);
+
+int print_u(va_list arg);
+
+.SH DESCRIPTION
+
+.P
+
+The intention of
+.B _printf
+is to imitate the function from the library <stdio.h>
+.I printf
+of the C language.
+.PP
+Return value
+In a succesful return, the function will return the number of characters printed (excluding the null byte used to end output to strings).
+If an output error is encountered in the function, a negative value is returned.
+
+.SH OPTIONS
+
+.P
+
+Conversion specifiers:
+
+.P
+.IP
+SYNTAX : %[Option]
+
+
+%c: Prints a character argument. Example --> _printf("%c", 'c');
+
+%s: Prints a string argument. Example --> _printf("%s", "Hello World");
+
+%d, %i: Prints a int argument. Example --> _printf("%d", 2021);
+
+%b: The unsigned int argument is converted to binary. Example --> _printf("%b", 1999);
+
+%r: Reverse a string argument. Example --> _printf("%r", "Have a Great Day!");
+
+%R: Apply ROT13 method in the string argument, per each character of the string. Example --> _printf("%R", "Uruguay");
+
+%o, %u, %x, %X; The unsigned int argument will be converted to unsigned octal using "%o", unsigned decimal using "%u" or unsigned hexadecimal using "%x" and "%X".The letters abcdef are used for x conversions; the letters ABCDEF are used for X conversions. Example --> _printf("%o", 1122);
+
+
+.PP
+.SH BUGS
+.P
+
+No bugs found yet.
+
+.SH AUTHOR
+
+.P
+
+Maximiliano Pan GitHub: https://github.com/pxnmatz
+Rodrigo Delgado GitHub: https://github.com/Ro8s
+
+.PP
+
+.SH SEE ALSO
+.PP
+
+printf() : https://linux.die.net/man/3/printf
