@@ -21,12 +21,12 @@ int print_R(va_list arg)
 		}
 		if (str[i] == alpha[j])
 		{
-			_putchar(rot13[j]);
+			_print(rot13[j]);
 			cont++;
 		}
 		else
 		{
-			_putchar(str[i]);
+			_print(str[i]);
 			cont++;
 		}
 	}

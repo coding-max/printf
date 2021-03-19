@@ -8,19 +8,19 @@
 void converter_x(int i)
 {
 	if (i < 10)
-		_putchar(i + '0');
+		_print(i + '0');
 	if (i == 10)
-		_putchar('a');
+		_print('a');
 	if (i == 11)
-		_putchar('b');
+		_print('b');
 	if (i == 12)
-		_putchar('c');
+		_print('c');
 	if (i == 13)
-		_putchar('d');
+		_print('d');
 	if (i == 14)
-		_putchar('e');
+		_print('e');
 	if (i == 15)
-		_putchar('f');
+		_print('f');
 }
 
 /**
@@ -35,7 +35,7 @@ int print_x(va_list arg)
 
 	if (num == 0)
 	{
-		_putchar('0');
+		_print('0');
 		return (cont);
 	}
 
@@ -62,19 +62,19 @@ int print_x(va_list arg)
 void converter_X(int i)
 {
 	if (i < 10)
-		_putchar(i + '0');
+		_print(i + '0');
 	if (i == 10)
-		_putchar('A');
+		_print('A');
 	if (i == 11)
-		_putchar('B');
+		_print('B');
 	if (i == 12)
-		_putchar('C');
+		_print('C');
 	if (i == 13)
-		_putchar('D');
+		_print('D');
 	if (i == 14)
-		_putchar('E');
+		_print('E');
 	if (i == 15)
-		_putchar('F');
+		_print('F');
 }
 
 /**
@@ -89,7 +89,7 @@ int print_X(va_list arg)
 
 	if (num == 0)
 	{
-		_putchar('0');
+		_print('0');
 		return (cont);
 	}
 

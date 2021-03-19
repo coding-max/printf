@@ -9,7 +9,7 @@ int print_c(va_list arg)
 {
 	char c = va_arg(arg, int);
 
-	_putchar(c);
+	_print(c);
 	return (1);
 }
 
@@ -26,7 +26,7 @@ int print_s(va_list arg)
 	if (string == NULL)
 		string = "(null)";
 	for (; string[i]; i++)
-		_putchar(string[i]);
+		_print(string[i]);
 	return (i);
 }
 
@@ -39,7 +39,7 @@ void _print_rev_recursion(char *s)
 	if (*s == 0)
 		return;
 	_print_rev_recursion(s + 1);
-	_putchar(*s);
+	_print(*s);
 }
 
 /**

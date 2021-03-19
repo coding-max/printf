@@ -9,7 +9,7 @@ int print_int(unsigned int num)
 {
 	if (num / 10 != 0)
 		print_int(num / 10);
-	_putchar('0' + (num % 10));
+	_print('0' + (num % 10));
 
 	return (0);
 }
@@ -28,7 +28,7 @@ int print_i(va_list arg)
 	if (n < 0)
 	{
 		cont++;
-		_putchar('-');
+		_print('-');
 		num = -n;
 		print_int(num);
 	}
@@ -81,7 +81,7 @@ int print_b(va_list arg)
 
 	if (num == 0)
 	{
-		_putchar('0');
+		_print('0');
 		return (cont);
 	}
 	while (num != 0)
@@ -93,7 +93,7 @@ int print_b(va_list arg)
 	cont = i;
 	i--;
 	for (; i >= 0; i--)
-		_putchar(tab[i] + '0');
+		_print(tab[i] + '0');
 
 	return (cont);
 }
@@ -110,7 +110,7 @@ int print_o(va_list arg)
 
 	if (num == 0)
 	{
-		_putchar('0');
+		_print('0');
 		return (cont);
 	}
 	while (num != 0)
@@ -122,7 +122,7 @@ int print_o(va_list arg)
 	cont = i;
 	i--;
 	for (; i >= 0; i--)
-		_putchar(tab[i] + '0');
+		_print(tab[i] + '0');
 
 	return (cont);
 }

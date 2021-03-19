@@ -1,6 +1,7 @@
 #include "holberton.h"
 
-int (*printer_aux(char flag))(va_list);
+int (*_printer(char flag))(va_list);
+int _print(char c);
 
 /**
  * _printf - produces output according to a format.
@@ -20,25 +21,25 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			_putchar(format[i]);
+			_print(format[i]);
 			printed_chars++;
 		}
 		else if (format[i + 1] == '\0')
 			return (-1);
 		else if (format[i + 1] == '%')
 		{
-			_putchar(format[i]);
+			_print(format[i]);
 			printed_chars++;
 			i++;
 		}
-		else if (printer_aux(format[i + 1]) != NULL)
+		else if (_printer(format[i + 1]) != NULL)
 		{
-			printed_chars = printed_chars + printer_aux(format[i + 1])(arg);
+			printed_chars = printed_chars + _printer(format[i + 1])(arg);
 			i++;
 		}
 		else
 		{
-			_putchar(format[i]);
+			_print(format[i]);
 			printed_chars++;
 		}
 	}
@@ -48,11 +49,11 @@ int _printf(const char *format, ...)
 }
 
 /**
- * printer_aux - auxiliar function for print with a specific format.
+ * _printer - auxiliar function for print with a specific format.
  * @flag: format specifier
  * Return: pointer to format function or NULL.
  */
-int (*printer_aux(char flag))(va_list)
+int (*_printer(char flag))(va_list)
 {
 	printer_t arr[] = {
 		{'c', print_c},
@@ -75,4 +76,14 @@ int (*printer_aux(char flag))(va_list)
 			break;
 
 	return (arr[i].function);
+}
+
+/**
+ * _print - writes the character c to stdout.
+ * @c: character to print.
+ * Return: on success 1, on error -1.
+ */
+int _print(char c)
+{
+	return (write(1, &c, 1));
 }
